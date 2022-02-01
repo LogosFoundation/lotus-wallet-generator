@@ -4,6 +4,8 @@ from cashaddress.convert import Address
 from hdwallet import HDWallet
 from getpass import getpass
 
+from lotus import lotus_address
+
 
 def main():
     user_entropy = getpass('Button-smash the keyboard for some random entropy: ')
@@ -28,6 +30,7 @@ def main():
     address = Address('P2PKH', list(pkh), 'bitcoincash')
     print('ADDRESS (share this with someone who wants to send you money):')
     print(' '*4, address.cash_address())
+    print(' '*4, lotus_address('lotus', pkh))
 
 
 if __name__ == '__main__':
